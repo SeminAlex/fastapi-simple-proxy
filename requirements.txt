@@ -1,8 +1,8 @@
-aiohttp
-requests
-fastapi
-redis
-aioredis
-fastapi-cache2[redis]
-uvicorn[standart]
-python-dotenv
+aiohttp==3.8.1
+requests==2.28.1
+fastapi==0.83.0
+redis==4.3.4
+aioredis==2.0.1
+fastapi-cache2[redis]==0.1.9
+uvicorn[standart]==0.18.3
+python-dotenv==0.21.0
