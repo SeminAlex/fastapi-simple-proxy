@@ -5,7 +5,7 @@ Simple example of proxy server for "https://unsplash.com" implemented in FastAPI
 ## How to use
 ### Docker-compose
 
-1) Replace YOUR_ACCESS_TOCKEN in app/.env file by your tocken from your account.
+1) Replace YOUR_ACCESS_TOCKEN in app/.env file by tocken from your account.
 2) Build container:
 ```sh
 docker-compose build
