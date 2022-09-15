@@ -1,0 +1,8 @@
+aiohttp
+requests
+fastapi
+redis
+aioredis
+fastapi-cache2[redis]
+uvicorn[standart]
+python-dotenv
