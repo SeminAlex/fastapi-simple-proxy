@@ -15,7 +15,6 @@ app.include_router(photos.router)
 
 @app.on_event("startup")
 def startup():
-
     redis = aioredis.from_url(f"redis://{Settings.CACHE_URL}", encoding="utf8", decode_responses=True)
     FastAPICache.init(RedisBackend(redis), prefix="fastapi-cache")
     SingletonAiohttp.get_aiohttp_client()

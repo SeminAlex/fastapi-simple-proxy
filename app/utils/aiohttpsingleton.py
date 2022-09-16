@@ -1,5 +1,4 @@
 import aiohttp
-from typing import Union
 
 
 class SingletonAiohttp:

@@ -24,10 +24,12 @@ async def photos_list(limit: Union[int, None] = 50, offset: Union[int, None] = 0
     params = {
         "client_id": Settings.AUTH_TOKEN,
     }
+    start, end = 0, limit
     if limit >= offset:
-        params['per_page'] = limit
+        params['per_page'] = limit + offset
         params['page'] = 1
-
+        start = offset
+        end = params['per_page']
     else:
         params['per_page'] = nearest_divisor(offset, limit)
         params['page'] = int(offset/params['per_page']) + 1
@@ -40,7 +42,7 @@ async def photos_list(limit: Union[int, None] = 50, offset: Union[int, None] = 0
         "id": info["id"],
         "description": info["description"] or info["alt_description"] or "",
         "image": info["urls"]["regular"]
-    }for info in result[:limit]]
+    }for info in result[start:end]]
 
     headers = {'X-Total': headers['X-Total']}
     return JSONResponse(content=result, headers=headers)
