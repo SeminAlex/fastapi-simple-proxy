@@ -8,4 +8,5 @@ class Settings:
     CACHE_URL = os.environ["CACHE_URL"]
     MAIN_URL = os.environ["MAIN_URL"]
     AUTH_TOKEN = os.environ["AUTH_TOKEN"]
+    MAX_OBJECTS_LIMIT = int(os.environ["MAX_OBJECTS_LIMIT"])
 
